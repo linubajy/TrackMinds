@@ -1,3 +1,9 @@
+/*
+Always use '/' as the other one is treated as a charater in groovy script
+Updated with downloading artifact from jfrog to PC
+Updated with SSH Agent -
+*/
+
 pipeline{
   agent any
   tools
@@ -103,7 +109,7 @@ pipeline{
       success{
        
          rtDownload (
-                    serverId: 'JfrogId',
+                    serverId: 'jfrog',
                     spec: '''{
                     "files": [
                          {

@@ -3,8 +3,11 @@
 
 This project is a SpringBoot Application that has 2 entities-track details, and mind(student) details. Details can be added/fetched on Postman/
 Dependencies:
+<br>
 STS 
+<br>
 Postman -Retrieve Info
+<br>
 MySQL -To store data
 
 # Pipeline using Jenkins

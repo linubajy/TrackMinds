@@ -119,7 +119,7 @@ pipeline{
            
            
             sshagent(['5b4c242b-4a34-48d1-a3a8-eb8f2907478c']){
-                    sh 'scp -r C:\Users\Linu\.jenkins\workspace\aws pipeline\target\*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
+                    bat 'scp -r C:\Users\Linu\.jenkins\workspace\aws pipeline\target\*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
         }
            
               

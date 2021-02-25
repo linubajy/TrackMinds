@@ -70,7 +70,8 @@ pipeline{
          stage('deploy to artifactory')
          {
             steps{
-     
+    
+              dir("C:\Users\Linu\.jenkins\workspace\aws pipeline")
                 rtUpload (
                     serverId: 'jfrog',
                     spec: '''{
@@ -86,12 +87,44 @@ pipeline{
     buildName: 'Build1',
     buildNumber: '1'
     )
+              
+   
+              
+              
+              
+              
+              
+              
      }}
      
     }
   
     post {  
+      success{
+        dir("C:\Users\Linu\.jenkins\workspace\aws pipeline")
+         rtDownload (
+                    serverId: 'JfrogId',
+                    spec: '''{
+                    "files": [
+                         {
+                             "pattern": "art-doc-dev-loc/springbootApp/",
+                             "target": "aws pipeline/"
+                        }
+                     ]
+                }''',
+ 
+  
+           buildName: 'Build2',
+           buildNumber: '2'      
            
+           
+            sshagent(['5b4c242b-4a34-48d1-a3a8-eb8f2907478c']){
+                    sh 'scp -r C:/Users/Linu/.jenkins/workspace/aws pipeline/target/*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
+        }
+           
+              
+      }
+      
          
          failure {  
              echo 'Mail being sent'

@@ -71,7 +71,7 @@ pipeline{
          {
             steps{
     
-              dir("C:/Users/Linu/.jenkins/workspace/aws pipeline")
+             
                 rtUpload (
                     serverId: 'jfrog',
                     spec: '''{
@@ -101,7 +101,7 @@ pipeline{
   
     post {  
       success{
-        dir("C:\Users\Linu\.jenkins\workspace\aws pipeline")
+       
          rtDownload (
                     serverId: 'JfrogId',
                     spec: '''{

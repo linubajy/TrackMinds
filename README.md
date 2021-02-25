@@ -1,7 +1,8 @@
 
 # Project 
 
-This project is a SpringBoot Application that has 2 entities-track details, and mind(student) details. Details can be added/fetched on Postman/
+This project is a SpringBoot Application that has 2 entities-track details, and mind(student) details. Details can be added/fetched on Postman.
+<br>
 Dependencies:
 <br>
 STS 

@@ -110,13 +110,13 @@ pipeline{
     post {  
       success{
        
-        /* rtDownload (
+        rtDownload (
                     serverId: 'jfrog',
                     spec: '''{
                     "files": [
                          {
                              "pattern": "art-doc-dev-loc/springbootApp/",
-                             "target": "aws pipeline/"
+                             "target": "artifacts/"
                         }
                      ]
                 }''',
@@ -125,10 +125,10 @@ pipeline{
            buildName: 'Build2',
            buildNumber: '2'      
            )
-           */
+           
             sshagent(['aws']){
                          sh 'ssh -o StrictHostKeyChecking=no ubuntu@52.38.156.206 pwd'
-                        sh 'scp -r C:/Users/Linu/.jenkins/workspace/aws pipeline/target/*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
+                        sh 'scp -r /var/jenkins_home/workspace/aws pipeline/artifacts/*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
                       
               
         }

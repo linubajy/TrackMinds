@@ -128,7 +128,7 @@ pipeline{
            
             sshagent(['aws']){
                          sh 'ssh -o StrictHostKeyChecking=no ubuntu@52.38.156.206 pwd'
-                        sh 'scp -r /var/jenkins_home/workspace/aws pipeline/artifacts/*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
+                        sh 'scp -r /var/jenkins_home/workspace/'aws pipeline'/artifacts/*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
                       
               
         }

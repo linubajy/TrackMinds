@@ -5,7 +5,11 @@ Updated with SSH Agent -
 */
 
 pipeline{
-  agent any
+  agent {
+    docker{
+      image 'maven:3-alpine'
+    }
+  }
   tools
   {
     maven 'maven'

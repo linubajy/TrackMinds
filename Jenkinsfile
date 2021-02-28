@@ -61,7 +61,7 @@ pipeline{
           agent any
           steps
           {
-             withSonarQubeEnv('sonarToken')
+             withSonarQubeEnv('sonar-server')
             {
                  bat 'java -version'
                  bat 'mvn clean package sonar:sonar'
@@ -69,7 +69,7 @@ pipeline{
           }
         }
         
-    
+    /*
          stage("Quality Gate") {
             steps {
               sleep(60)
@@ -85,6 +85,7 @@ pipeline{
               }
             }
           }
+          */
           stage('collect artifact')
           {
                 steps{

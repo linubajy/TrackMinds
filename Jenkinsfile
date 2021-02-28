@@ -27,14 +27,14 @@ pipeline{
           { 
             steps
             {
-              bat 'mvn test'
+              sh 'mvn test'
             } 
           }
           stage("Build")
           {
              steps
             {
-               bat 'mvn package'
+               sh 'mvn package'
             } 
               
           } 
@@ -155,7 +155,7 @@ pipeline{
          
          failure {  
              echo 'Mail being sent'
-             mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: 'blinu.1997@gmail.com', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "blinu.1997@gmail.com";  
+            // mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: 'blinu.1997@gmail.com', mimeType: 'text/html', replyTo: '', subject: "ERROR CI: Project name -> ${env.JOB_NAME}", to: "blinu.1997@gmail.com";  
          }  
           
      }  

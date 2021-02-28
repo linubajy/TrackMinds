@@ -13,7 +13,7 @@ pipeline{
   }
        
   stages {
-    /*
+    
           stage('Fetch')
           {
             steps 
@@ -22,6 +22,7 @@ pipeline{
                git branch: 'master', url: 'https://github.com/linubajy/TrackMinds.git'
             }
           }
+    /*
     
           stage("Test")
           { 

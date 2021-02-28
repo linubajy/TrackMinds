@@ -22,7 +22,7 @@ pipeline{
                git branch: 'master', url: 'https://github.com/linubajy/TrackMinds.git'
             }
           }
-    /*
+    
           stage("Test")
           { 
             steps
@@ -38,7 +38,7 @@ pipeline{
             } 
               
           } 
-    
+    /*
           stage("SonarQube analysis") 
           {
             steps
@@ -53,6 +53,22 @@ pipeline{
               }
             }  
           }
+    
+    */
+        stage('Sonar Analysis')
+        {
+          agent any
+          steps
+          {
+             withSonarQubeEnv('sonarToken')
+            {
+                 sh 'java -version'
+                 sh 'mvn clean package sonar:sonar'
+            }
+          }
+        }
+        
+    
          stage("Quality Gate") {
             steps {
               sleep(60)
@@ -103,7 +119,7 @@ pipeline{
               
               
      }}
-     */
+     
      
     }
   

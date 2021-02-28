@@ -54,7 +54,7 @@ pipeline{
             }  
           }
     
-    */
+    /*
         stage('Sonar Analysis')
         {
           agent any

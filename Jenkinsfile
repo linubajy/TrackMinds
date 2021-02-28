@@ -63,6 +63,7 @@ pipeline{
           {
              withSonarQubeEnv('sonar-server')
             {
+                 echo 'Using sonarQube'
                  bat 'java -version'
                  bat 'mvn clean package sonar:sonar'
             }

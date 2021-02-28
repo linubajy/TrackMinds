@@ -5,11 +5,7 @@ Updated with SSH Agent -
 */
 
 pipeline{
-  agent {
-    docker{
-      image 'maven:3-alpine'
-    }
-  }
+  agent any;
   tools
   {
     maven 'maven'
@@ -51,8 +47,8 @@ pipeline{
               {
                 withMaven(maven:'maven')
                 {
-                  bat 'java -version'
-                  bat 'mvn sonar:sonar'
+                  sh 'java -version'
+                  sh 'mvn sonar:sonar'
                 }
               }
             }  

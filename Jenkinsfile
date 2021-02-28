@@ -13,7 +13,7 @@ pipeline{
   }
        
   stages {
-    
+    /*
           stage('Fetch')
           {
             steps 
@@ -27,14 +27,14 @@ pipeline{
           { 
             steps
             {
-              sh 'mvn test'
+              bat 'mvn test'
             } 
           }
           stage("Build")
           {
              steps
             {
-               sh 'mvn package'
+               bat 'mvn package'
             } 
               
           } 
@@ -47,14 +47,14 @@ pipeline{
               {
                 withMaven(maven:'maven')
                 {
-                  sh 'java -version'
-                  sh 'mvn sonar:sonar'
+                  bat 'java -version'
+                  bat 'mvn sonar:sonar'
                 }
               }
             }  
           }
     
-    /*
+    
         stage('Sonar Analysis')
         {
           agent any
@@ -62,8 +62,8 @@ pipeline{
           {
              withSonarQubeEnv('sonarToken')
             {
-                 sh 'java -version'
-                 sh 'mvn clean package sonar:sonar'
+                 bat 'java -version'
+                 bat 'mvn clean package sonar:sonar'
             }
           }
         }
@@ -119,7 +119,7 @@ pipeline{
               
               
      }}
-     */
+    */
      
     }
   
@@ -143,8 +143,8 @@ pipeline{
            )
            
             sshagent(['aws']){
-                         sh 'ssh -o StrictHostKeyChecking=no ubuntu@52.38.156.206 pwd'
-                        sh 'scp -r /var/jenkins_home/workspace/aws-pipeline/artifacts/springbootApp/*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
+                         bat 'ssh -o StrictHostKeyChecking=no ubuntu@52.38.156.206 pwd'
+                        bat 'scp -r /var/jenkins_home/workspace/aws-pipeline/artifacts/springbootApp/*.jar ubuntu@52.38.156.206:/home/ubuntu/artifacts'
                       
               
         }

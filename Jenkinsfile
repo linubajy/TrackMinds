@@ -70,7 +70,7 @@ pipeline{
           }
         }
         
-    /*
+    
          stage("Quality Gate") {
             steps {
               sleep(60)
@@ -86,7 +86,7 @@ pipeline{
               }
             }
           }
-          */
+          
           stage('collect artifact')
           {
                 steps{

@@ -27,6 +27,7 @@ pipeline{
           { 
             steps
             {
+              bat 'mvn clean'
               bat 'mvn test'
             } 
           }

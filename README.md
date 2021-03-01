@@ -17,3 +17,5 @@ Added a jenkins file that can create a pipeline to deploy the package to jFrog a
 # Artifactory 
 JFrog Artifactory
 
+# AWS
+The artifacts are deployed to the remote host using EC2 ubuntu instance through an SSH Connectiom

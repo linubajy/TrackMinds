@@ -14,8 +14,11 @@ MySQL -To store data
 # Pipeline using Jenkins
 Added a jenkins file that can create a pipeline to deploy the package to jFrog artifactory
 
+# SonarQube and Quality Gate
+Created Quality Gates for Analysis of Code Quality 
+
 # Artifactory 
 JFrog Artifactory
 
 # AWS
-The artifacts are deployed to the remote host using EC2 ubuntu instance through an SSH Connectiom
+The artifacts are deployed to the remote host using EC2 ubuntu instance through an SSH Connection

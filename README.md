@@ -22,3 +22,6 @@ JFrog Artifactory
 
 # AWS
 The artifacts are deployed to the remote host using EC2 ubuntu instance through an SSH Connection
+
+# Deployed JAR files to S3 Bucket
+Jar files were uploaded to the S3 Bucket

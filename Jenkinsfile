@@ -122,7 +122,17 @@ pipeline{
               
               
      }}
-    
+    stage('Deploy to S3 Bucket')
+         {
+                steps
+                {
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '67e0088d-4a51-4afd-b053-d8b8698a66ba', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
+                    {
+                        s3Upload(file:'C:/Users/Linu/.jenkins/workspace/aws-pipeline/target/ClassRoom--1-0.0.1-SNAPSHOT.jar', bucket:'jenkins-jarfiles', path:'jenkins-jarfiles/ClassRoom--1-0.0.1-SNAPSHOT.jar')
+                     }         
+                    
+                }
+         }   
      
     }
   

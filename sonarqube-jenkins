@@ -40,10 +40,9 @@ pipeline{
           agent any
           steps
           {
-             withSonarQubeEnv('sonar-server')
+             withSonarQubeEnv('sonarClousID')
             {
                  echo 'Using sonarQube'
-                 bat 'java -version'
                  bat 'mvn clean package sonar:sonar'
             }
           }

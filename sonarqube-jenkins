@@ -8,6 +8,7 @@ pipeline{
        
   stages {
     
+          /*
           stage('Fetch')
           {
             steps 
@@ -33,7 +34,7 @@ pipeline{
             } 
               
           } 
-    
+        */
         stage('Sonar Analysis')
         {
           agent any
